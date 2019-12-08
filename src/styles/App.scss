@@ -47,6 +47,7 @@
   margin:2px;
   border-radius: 4px;
   background-color: #3e4452;
+  cursor: pointer;
   transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
   &.isPlaying {
     opacity: 1;
