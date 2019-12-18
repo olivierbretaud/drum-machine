@@ -1,4 +1,11 @@
 import React, { useState , useEffect , useRef } from 'react';
+import Tone from 'tone';
+import InputRange from 'react-input-range';
+import 'react-input-range/lib/css/index.css'
+
+import Drum from './components/partials/Drum';
+import './styles/App.scss';
+
 import A1 from './assets/sounds/High-Conga-1.wav';
 import A2 from './assets/sounds/High-Conga-1.wav';
 import A3 from './assets/sounds/Claves.wav';
@@ -11,13 +18,13 @@ import B2 from './assets/sounds/Korg-N1R-Low-Bongo.wav';
 import B3 from './assets/sounds/Korg-N1R-Maracas.wav';
 
 
-import Tone from 'tone';
-import Drum from './components/partials/Drum';
-import './styles/App.scss';
+
 
 function App() {
   const [ timerIndex , setTimerIndex ] = useState(0);
-  const [ isLoaded , setLoaded ]= useState(false)
+  const [ isLoaded , setLoaded ]= useState(false);
+  const [ bpm , setBpm ] = useState(200);
+  const [ bpmOnChange , setBpmOnChange ] = useState(200);
   var timer = useRef();
 
   // var BassDrum1 = new Tone.Player({
@@ -44,13 +51,16 @@ function App() {
         setTimerIndex(timerIndex + 1)
       }
       clearTimeout(timer.current)
-    }, 200);
+    }, 60000 / bpm );
 
     return () => clearTimeout(timer.current)
 
-  }, [timerIndex])
+  }, [timerIndex , bpm ])
 
-
+  function handleChangeBpm(value) {
+    Tone.Transport.stop()
+    setBpmOnChange(value)
+  } 
 
   return (
     <div className="App">
@@ -71,6 +81,14 @@ function App() {
           :
           null
         }
+        <div style={{ width: 300 , marginTop: 20 }}>
+        <InputRange
+          maxValue={300}
+          minValue={40}
+          value={bpmOnChange}
+          onChangeComplete={() => setBpm(bpmOnChange)}
+          onChange={value => handleChangeBpm(value)} />
+        </div>
       </header>
     </div>
   );

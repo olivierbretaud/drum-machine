@@ -5,7 +5,7 @@ export default function DrumToggle(props) {
 
   useEffect(() => {
     if (isPlaying && props.timerIndex === props.index) {
-      props.drum.triggerAttack(props.note)
+      props.drum.triggerAttackRelease(props.note)
     }
 
   });
