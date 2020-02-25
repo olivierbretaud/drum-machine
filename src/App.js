@@ -18,8 +18,6 @@ import B2 from './assets/sounds/Korg-N1R-Low-Bongo.wav';
 import B3 from './assets/sounds/Korg-N1R-Maracas.wav';
 
 
-
-
 function App() {
   const [ timerIndex , setTimerIndex ] = useState(0);
   const [ isLoaded , setLoaded ]= useState(false);
@@ -27,10 +25,6 @@ function App() {
   const [ bpmOnChange , setBpmOnChange ] = useState(200);
   var timer = useRef();
 
-  // var BassDrum1 = new Tone.Player({
-  //   "url" : drum,
-  //   "autostart" : false,
-  // }).toMaster();
   const sampler = useRef(
     new Tone.Sampler(
       { A1 , A2 , A3 , A4 , A5 ,A6, A7,  B1 , B2, B3 },
@@ -57,14 +51,18 @@ function App() {
 
   }, [timerIndex , bpm ])
 
+  useEffect(() => {
+    Tone.Master.mute = false;
+  },[bpm]);
+
   function handleChangeBpm(value) {
-    Tone.Transport.stop()
+    Tone.Master.mute = true;
     setBpmOnChange(value)
   } 
 
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="app-content">
         {isLoaded?
           <>
             <Drum drum={sampler.current} timerIndex={timerIndex} note={"A2"} color={"#c41fc2"}/>
@@ -81,15 +79,19 @@ function App() {
           :
           null
         }
-        <div style={{ width: 300 , marginTop: 20 }}>
+        <div style={{ width: 348 , marginTop: 35 }}>
         <InputRange
-          maxValue={300}
+          maxValue={500}
           minValue={40}
           value={bpmOnChange}
+          activeTrack={"d-none"}
+          maxLabel={"d-none"}
+          minLabel={"d-none"}
+          formatLabel={value => `${value} bpm`}
           onChangeComplete={() => setBpm(bpmOnChange)}
           onChange={value => handleChangeBpm(value)} />
         </div>
-      </header>
+      </div>
     </div>
   );
 }

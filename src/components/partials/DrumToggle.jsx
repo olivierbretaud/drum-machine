@@ -19,4 +19,4 @@ export default function DrumToggle(props) {
       onClick={() => setIsPlaying(!isPlaying)}>
     </div>
   )
-}
+};
