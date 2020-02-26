@@ -6,7 +6,7 @@ import 'react-input-range/lib/css/index.css'
 import Drum from './components/partials/Drum';
 import './styles/App.scss';
 
-import A1 from './assets/sounds/High-Conga-1.wav';
+import A1 from './assets/sounds/Clap-1.wav';
 import A2 from './assets/sounds/High-Conga-1.wav';
 import A3 from './assets/sounds/Claves.wav';
 import A4 from './assets/sounds/Cuica-1.wav';
@@ -68,8 +68,8 @@ function App() {
             <Drum drum={sampler.current} timerIndex={timerIndex} note={"A2"} color={"#c41fc2"}/>
             <Drum drum={sampler.current} timerIndex={timerIndex} note={"A1"} color={"#c41fc2"}/>
             <Drum drum={sampler.current} timerIndex={timerIndex} note={"A3"} color={"#c41fc2"}/>
-            <Drum drum={sampler.current} timerIndex={timerIndex} note={"A4"} color={"#c41fc2"}/>
-            <Drum drum={sampler.current} timerIndex={timerIndex} note={"A5"} color={"#c41fc2"}/>
+            <Drum drum={sampler.current} timerIndex={timerIndex} note={"A4"} color={"#7effc3"}/>
+            <Drum drum={sampler.current} timerIndex={timerIndex} note={"A5"} color={"#7effc3"}/>
             <Drum drum={sampler.current} timerIndex={timerIndex} note={"A6"} color={"#c41fc2"}/>
             <Drum drum={sampler.current} timerIndex={timerIndex} note={"A7"} color={"#c41fc2"}/>
             <Drum drum={sampler.current} timerIndex={timerIndex} note={"B1"} color={"#c41fc2"}/>

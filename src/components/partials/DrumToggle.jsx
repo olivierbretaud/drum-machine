@@ -14,7 +14,7 @@ export default function DrumToggle(props) {
     <div className={`button-play ${isPlaying ? "isPlaying" : ""}`}
       style={{
         backgroundColor: isPlaying ? props.color : null,
-        opacity: props.timerIndex === props.index ? 1: 0.4 
+        opacity: props.timerIndex === props.index ? 1: 0.3 
       }}
       onClick={() => setIsPlaying(!isPlaying)}>
     </div>
