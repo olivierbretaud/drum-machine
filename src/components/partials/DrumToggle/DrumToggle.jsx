@@ -2,7 +2,7 @@ import React , { useState , useEffect } from 'react';
 
 export default function DrumToggle(props) {
   const [ isPlaying ,setIsPlaying ] = useState(props.isPlaying)
-
+  
   useEffect(() => {
     if (isPlaying && props.timerIndex === props.index) {
       props.drum.triggerAttackRelease(props.note)

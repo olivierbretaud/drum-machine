@@ -1,0 +1,22 @@
+@import '../../../styles/variables.scss';
+
+.name {
+  padding: 2px 6px;
+  text-transform: uppercase;
+}
+
+.row {
+  display: flex;
+}
+
+.button-play {
+  width: calc(100vw / 10 );
+  height: calc(100vw / 14 );
+  border: 1px solid $dark;
+  background-color: #484f5f;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  &.isPlaying {
+    opacity: 1;
+  }
+}
