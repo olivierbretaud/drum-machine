@@ -1,5 +1,9 @@
 @import '../../../styles/variables.scss';
 
+.category {
+  width: 100%;
+}
+
 .name {
   padding: 2px 6px;
   text-transform: uppercase;
@@ -7,11 +11,12 @@
 
 .row {
   display: flex;
+  width: 100%;
 }
 
 .button-play {
-  width: calc(100vw / 10 );
-  height: calc(100vw / 14 );
+  width: calc(100% / 16 );
+  height: 20px;
   border: 1px solid $dark;
   background-color: #484f5f;
   cursor: pointer;

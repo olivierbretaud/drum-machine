@@ -43,19 +43,23 @@ export const allCategories = [
     color: "#33FFDA",
     list: [
       {
-        note: "A1",
+        note: A1,
+        name: "A1",
         isActive: true
       },
       {
-        note: "A2",
+        note: A2,
+        name: "A2",
         isActive: true
       },
       {
-        note: "A3",
+        note: A3,
+        name: "A3",
         isActive: true
       },
       {
-        note: "A4",
+        note: A4,
+        name: "A4",
         isActive: true
       }
     ]
@@ -65,19 +69,23 @@ export const allCategories = [
     color: "#ffac33",
     list: [
       {
-        note: "B1",
+        note: B1,
+        name: "B1",
         isActive: true
       },
       {
-        note: "B2",
+        note: B2,
+        name: "B2",
         isActive: true
       },
       {
-        note: "B3",
+        note: B3,
+        name: "B3",
         isActive: true
       },
       {
-        note: "B4",
+        note: B4,
+        name: "B4",
         isActive: true
       }
     ]
@@ -87,23 +95,28 @@ export const allCategories = [
     color: "#DA33FF",
     list: [
       {
-        note: "C1",
+        note: C1,
+        name: "C1",
         isActive: true
       },
       {
-        note: "C2",
+        note: C2,
+        name: "C2",
         isActive: true
       },
       {
-        note: "C3",
+        note: C3,
+        name: "C3",
         isActive: true
       },
       {
-        note: "C4",
+        note: C4,
+        name: "C4",
         isActive: true
       },
       {
-        note: "C5",
+        note: C5,
+        name: "C5",
         isActive: true
       }
     ]
@@ -113,15 +126,18 @@ export const allCategories = [
     color: "#6B33FF",
     list: [
       {
-        note: "D1",
+        note: D1,
+        name: "D1",
         isActive: true
       },
       {
-        note: "D2",
+        note: D2,
+        name: "D2",
         isActive: true
       },
       {
-        note: "D3",
+        note: D3,
+        name: "D3",
         isActive: true
       }
     ]
@@ -131,35 +147,43 @@ export const allCategories = [
     color: "#33beff",
     list: [
       {
-        note: "E1",
+        note: E1,
+        name: "E1",
         isActive: true
       },
       {
-        note: "E2",
+        note: E2,
+        name: "E2",
         isActive: true
       },
       {
-        note: "E3",
+        note: E3,
+        name: "E3",
         isActive: true
       },
       {
-        note: "E4",
+        note: E4,
+        name: "E4",
         isActive: true
       },
       {
-        note: "E5",
+        note: E5,
+        name: "E5",
         isActive: true
       },
       {
-        note: "E6",
+        note: E6,
+        name: "E6",
         isActive: true
       },
       {
-        note: "E7",
+        note: E7,
+        name: "E7",
         isActive: true
       },
       {
-        note: "E8",
+        note: E8,
+        name: "E8",
         isActive: true
       }
     ]
