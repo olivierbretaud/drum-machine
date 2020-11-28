@@ -1,3 +1,4 @@
+
 import React, { useState , useEffect , useRef } from 'react';
 import Tone from 'tone';
 import InputRange from 'react-input-range';
@@ -9,8 +10,8 @@ import DrumList from './components/partials/DrumList/DrumList';
 function App() {
   const [ timerIndex , setTimerIndex ] = useState(0);
   const [ isLoaded , setLoaded ]= useState(false);
-  const [ bpm , setBpm ] = useState(400);
-  const [ bpmOnChange , setBpmOnChange ] = useState(400);
+  const [ bpm , setBpm ] = useState(110);
+  const [ bpmOnChange , setBpmOnChange ] = useState(110);
   const [ activePlayList , setActivePlayList ] = useState(allCategories);
 
   var timer = useRef();
@@ -31,14 +32,14 @@ function App() {
   useEffect(() => {
 
     timer.current = setTimeout(function(){
-      if (timerIndex === 9) {
+      if (timerIndex === 15) {
         setTimerIndex(0)
-        sampler.current.releaseAll();
       } else {
         setTimerIndex(timerIndex + 1)
       }
+      sampler.current.releaseAll();
       clearTimeout(timer.current)
-    }, 60000 / bpm );
+    }, 60000 / (bpm * 4 ));
 
     return () => clearTimeout(timer.current)
 
@@ -69,7 +70,7 @@ function App() {
         }
         <div style={{ width: '90%' , marginTop: 35 }}>
         <InputRange
-          maxValue={500}
+          maxValue={200}
           minValue={40}
           value={bpmOnChange}
           activeTrack={"d-none"}
