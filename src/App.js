@@ -1,5 +1,5 @@
 import React, { useState , useEffect , useRef } from 'react';
-import { howler } from 'howler'
+import { Howler } from 'howler'
 import InputRange from 'react-input-range';
 import 'react-input-range/lib/css/index.css'
 
@@ -8,7 +8,6 @@ import DrumList from './components/partials/DrumList/DrumList';
 
 function App() {
   const [ timerIndex , setTimerIndex ] = useState(0);
-  const [ isLoaded , setLoaded ]= useState(false);
   const [ bpm , setBpm ] = useState(110);
   const [ bpmOnChange , setBpmOnChange ] = useState(110);
   // const [ activePlayList , setActivePlayList ] = useState(allCategories);
@@ -19,11 +18,13 @@ function App() {
 
     timer.current = setTimeout(function(){
       if (timerIndex === 15) {
-        setTimerIndex(0)
+        setTimerIndex(0); 
       } else {
         setTimerIndex(timerIndex + 1)
       }
-      clearTimeout(timer.current)
+      clearTimeout(timer.current);
+      Howler.stop();
+      Howler.unload();
     }, 60000 / (bpm * 4));
 
     return () => clearTimeout(timer.current)

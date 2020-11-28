@@ -1,14 +1,14 @@
 import React from 'react';
 import DrumRow from '../DrumRow/DrumRow';
-import './DrumList.scss';
+import styles from './DrumList.module.scss';
 
 export default function DrumList({ list , timerIndex }) {
   return (
     <>
       {list.map(( category , i) => {
         return (
-          <div className="category">
-            <div className="name" 
+          <div key={'category' + i } className={styles.category}>
+            <div className={styles.name} 
               style={{ color: category.color}}>{category.name}</div>
               {category.list.map((note ,i) => {
                 if (note.isActive) {

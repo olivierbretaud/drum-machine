@@ -1,27 +1,32 @@
-import React  , { useRef , useEffect } from 'react';
-import { Howl } from 'howler';
+import React  , { useRef } from 'react';
+import { Howl , Howler} from 'howler';
 import DrumToggle from '../DrumToggle/DrumToggle';
+import styles from './DrumRow.module.scss';
 
 export default function DrumRow({ color , timerIndex , note  }) {
   var toogleArray = [false, false, false, false, false,false,false, false , false, false , false,false,false, false , false, false ];
 
-  var sound = useRef();
+  var sound = useRef(new Howl({
+    src: [note],
+    html5: true
+  }));
+
+
 
   function playSound() {
-    //check if sound is null, if not stop previous sound and unload it
-    if (sound.current != null) {
-        sound.current.stop();
-        sound.current.unload();
-        sound.current  = null;
-    }
-    sound.current = new Howl({
-        src: [note]
-    });
+    // if (sound.current != null) {
+    //     sound.current.stop();
+    //     sound.current.unload();
+    //     sound.current  = null;
+    // }
+    sound.current.stop();
+    sound.current.unload();
+
     sound.current.play();
   }
 
   return (
-    <div className="row">
+    <div className={styles.row}>
         {toogleArray.map(( bool , i ) => (<DrumToggle
           key={i}
           isPlaying={bool}
