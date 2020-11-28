@@ -12,7 +12,6 @@ function App() {
   const [ isLoaded , setLoaded ]= useState(false);
   const [ bpm , setBpm ] = useState(110);
   const [ bpmOnChange , setBpmOnChange ] = useState(110);
-  const [ activePlayList , setActivePlayList ] = useState(allCategories);
 
   var timer = useRef();
 
@@ -61,7 +60,7 @@ function App() {
           <>
             <DrumList
               now={now}
-              list={activePlayList}
+              list={allCategories}
               sampler={sampler.current}
               timerIndex={timerIndex} />
           </>

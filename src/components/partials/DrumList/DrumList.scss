@@ -14,9 +14,10 @@
 }
 
 .button-play {
-  width: calc(100% / 16 );
+  width: calc((100% / 16 ) - 2px );
+  margin: 4px;
   height: 20px;
-  border: 1px solid $dark;
+  border-radius: 10px;
   background-color: #484f5f;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
