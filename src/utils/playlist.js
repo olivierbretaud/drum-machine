@@ -39,6 +39,9 @@ export const playList = {
 
 //COMMENT
 
+export const toogleArray = [false, false, false, false, false, false,false, false ];
+
+
 export const allCategories = [
   {
     name: "Claps",

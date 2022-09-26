@@ -1,9 +1,10 @@
 
 import React from 'react';
+import { toogleArray } from '../../../utils/playlist';
 import DrumToggle from '../DrumToggle/DrumToggle';
 
 export default function DrumRow({ color , timerIndex , note , now , drum }) {
-  var toogleArray = [false, false, false, false, false,   false,false, false , false, false , false,   false,false, false , false, false ];
+  console.log(toogleArray);
   return (
     <div className="row">
         {toogleArray.map(( bool , i ) => (<DrumToggle

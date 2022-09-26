@@ -13,7 +13,12 @@ function App() {
   const [ bpm , setBpm ] = useState(110);
   const [ bpmOnChange , setBpmOnChange ] = useState(110);
 
+
   var timer = useRef();
+
+  Tone.setContext({
+    context : new Tone.Context({ latencyHint : "interactive" })
+  });
 
   const now = Tone.now();
 
@@ -31,7 +36,7 @@ function App() {
   useEffect(() => {
 
     timer.current = setTimeout(function(){
-      if (timerIndex === 15) {
+      if (timerIndex === 7) {
         setTimerIndex(0)
       } else {
         setTimerIndex(timerIndex + 1)
