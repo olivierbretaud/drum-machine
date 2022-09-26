@@ -16,25 +16,25 @@ function App() {
 
   var timer = useRef();
 
-  Tone.setContext({
-    context : new Tone.Context({ latencyHint : "interactive" })
-  });
 
   const now = Tone.now();
 
-  const sampler = useRef(
-    new Tone.Sampler(
+  const sampler = useRef();
+
+  useEffect(() => {
+    const context = new Tone.Context({ latencyHint: "interactive" });
+    Tone.setContext(context);
+    sampler.current = new Tone.Sampler(
       playList ,
       {
         onload: () => {
           setLoaded(true);
         }
       }
-    ).toMaster()
-  );
+    ).toMaster();
+  },[]);
 
   useEffect(() => {
-
     timer.current = setTimeout(function(){
       if (timerIndex === 7) {
         setTimerIndex(0)

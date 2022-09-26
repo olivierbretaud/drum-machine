@@ -4,7 +4,6 @@ import { toogleArray } from '../../../utils/playlist';
 import DrumToggle from '../DrumToggle/DrumToggle';
 
 export default function DrumRow({ color , timerIndex , note , now , drum }) {
-  console.log(toogleArray);
   return (
     <div className="row">
         {toogleArray.map(( bool , i ) => (<DrumToggle
